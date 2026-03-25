@@ -4,29 +4,61 @@
   bottom: 22px;
   right: 22px;
   z-index: 2000;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--pur), var(--pnk));
-  border: none;
+  width: auto;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 0;
+  background: linear-gradient(135deg, rgba(10,5,30,.95), rgba(18,8,40,.95));
+  border: 1px solid var(--pur);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 22px rgba(124, 58, 237, .5);
-  transition: all .3s
+  box-shadow: 0 0 18px rgba(124, 58, 237, .4), inset 0 0 12px rgba(124,58,237,.06);
+  transition: all .3s;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  overflow: visible
 }
 
 #cbt:hover {
-  transform: scale(1.12);
-  box-shadow: 0 0 38px rgba(236, 72, 153, .5)
+  border-color: var(--cyn);
+  box-shadow: 0 0 32px rgba(0, 212, 255, .5), inset 0 0 18px rgba(0,212,255,.08);
+  transform: translateY(-3px)
 }
 
-#cbt img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover
+.cbt-inner {
+  display: flex;
+  align-items: center;
+  gap: 7px
+}
+
+.cbt-icon {
+  font-size: 1rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(124,58,237,.8))
+}
+
+.cbt-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--cyn);
+  letter-spacing: .15em;
+  text-shadow: 0 0 10px var(--cyn)
+}
+
+.cbt-ring {
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(124,58,237,.3);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  animation: cbt-pulse 2.5s ease-in-out infinite;
+  pointer-events: none
+}
+
+@keyframes cbt-pulse {
+  0%, 100% { opacity: .3; transform: scale(1); }
+  50%       { opacity: 1;  transform: scale(1.03); }
 }
 
 .cnotif {

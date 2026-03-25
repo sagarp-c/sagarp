@@ -51,6 +51,40 @@
   font-size: .93rem
 }
 
+.czbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Fira Code', monospace;
+  font-size: .62rem;
+  letter-spacing: .08em;
+  padding: 3px 9px;
+  border-radius: 2px;
+  margin-right: 6px;
+  margin-bottom: 4px
+}
+
+.czb-yt {
+  background: rgba(255, 0, 0, .12);
+  border: 1px solid rgba(255, 68, 68, .4);
+  color: #ff5555
+}
+
+.czb-game {
+  background: rgba(255, 140, 0, .1);
+  border: 1px solid rgba(255, 140, 0, .35);
+  color: var(--org)
+}
+
+.czcopy {
+  font-family: 'Fira Code', monospace;
+  font-size: .6rem !important;
+  color: rgba(226, 232, 240, .3) !important;
+  letter-spacing: .06em;
+  margin-top: 2px !important;
+  margin-bottom: 12px !important
+}
+
 .chcards {
   display: flex;
   flex-direction: column;

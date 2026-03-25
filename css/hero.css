@@ -25,6 +25,15 @@
   width: 100%
 }
 
+.htop-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem
+}
+
 .htag {
   display: inline-flex;
   align-items: center;
@@ -34,10 +43,33 @@
   color: var(--cyn);
   border: 1px solid rgba(0, 212, 255, .35);
   padding: 4px 14px;
-  margin-bottom: 1.8rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   box-shadow: 0 0 14px rgba(0, 212, 255, .15)
+}
+
+.hresume {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: .68rem;
+  color: var(--org);
+  border: 1px solid rgba(255, 140, 0, .5);
+  padding: 4px 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .25s;
+  box-shadow: 0 0 10px rgba(255, 140, 0, .1);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%)
+}
+
+.hresume:hover {
+  background: rgba(255, 140, 0, .12);
+  color: #fff;
+  box-shadow: 0 0 22px rgba(255, 140, 0, .4);
+  transform: translateY(-2px)
 }
 
 .hdot {
@@ -66,7 +98,14 @@
   font-size: clamp(2rem, 8vw, 4.8rem);
   line-height: 1.15;
   margin-bottom: .6rem;
-  display: block
+  display: block;
+  animation: hname-breathe 4s ease-in-out infinite
+}
+
+@keyframes hname-breathe {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(124,58,237,.4)) drop-shadow(0 0 20px rgba(124,58,237,.15)); letter-spacing: 0.02em; }
+  33%       { filter: drop-shadow(0 0 14px rgba(0,212,255,.5)) drop-shadow(0 0 30px rgba(0,212,255,.2)); letter-spacing: 0.04em; }
+  66%       { filter: drop-shadow(0 0 12px rgba(236,72,153,.45)) drop-shadow(0 0 26px rgba(236,72,153,.18)); letter-spacing: 0.03em; }
 }
 
 .gn {
@@ -137,17 +176,33 @@
   margin-left: .3em
 }
 
-.htagl {
-  font-family: 'Fira Code', monospace;
-  font-size: clamp(.85rem, 2vw, 1.22rem);
-  color: var(--txt);
+.htagl-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
   min-height: 1.6em;
   margin: .5rem auto;
-  border-right: 2px solid var(--org);
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  vertical-align: bottom
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(.85rem, 2vw, 1.22rem);
+  color: var(--txt)
+}
+
+#htagl {
+  white-space: nowrap
+}
+
+.hcursor {
+  display: inline-block;
+  color: var(--org);
+  font-weight: bold;
+  margin-left: 1px;
+  animation: cur-blink .75s step-end infinite
+}
+
+@keyframes cur-blink {
+  0%, 100% { opacity: 1 }
+  50%       { opacity: 0 }
 }
 
 .hpills {

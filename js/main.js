@@ -78,7 +78,7 @@ window.addEventListener('scroll', () => {
 
 // ═══════════════ HERO PARTICLES CANVAS ═══════════════
 function startHero() {
-  // Typing tagline
+  // Typing tagline — text goes in span#htagl; .hcursor span blinks separately in CSS
   const phrases = ['Building Intelligent Systems', 'Breaking Them Securely', 'AI Developer + CTF Warrior', 'Kerala → the Stars 🚀', 'Founder of Czernode'];
   let pi = 0, ci = 0, del = false;
   const el = document.getElementById('htagl');

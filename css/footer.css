@@ -1,0 +1,41 @@
+/* ═══════════════ FOOTER ═══════════════ */
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--brd);
+  padding: 26px clamp(1rem, 3vw, 2rem);
+  text-align: center
+}
+
+.flogo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: .7rem;
+  background: linear-gradient(90deg, var(--pur), var(--pnk));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 13px
+}
+
+.fsoc {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap
+}
+
+.fsoc a {
+  color: var(--mut);
+  font-size: .95rem;
+  transition: color .2s
+}
+
+.fsoc a:hover {
+  color: var(--pur);
+  text-shadow: 0 0 8px var(--pur)
+}
+
+.fcopy {
+  font-family: 'Fira Code', monospace;
+  font-size: .67rem;
+  color: var(--mut)
+}

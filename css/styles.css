@@ -1,0 +1,21 @@
+/* ═══════════════════════════════════════════════════ */
+/*  SAGAR.P PORTFOLIO — Main CSS Entry Point           */
+/*  Each file covers exactly one section / concern.    */
+/* ═══════════════════════════════════════════════════ */
+
+@import url('base.css');        /* CSS variables + global reset      */
+@import url('entry.css');       /* Entry / splash overlay            */
+@import url('boot.css');        /* Boot terminal screen              */
+@import url('nav.css');         /* Navigation bar + mobile menu      */
+@import url('sections.css');    /* Shared section layout utilities   */
+@import url('hero.css');        /* Hero / landing section            */
+@import url('about.css');       /* About / system profile            */
+@import url('skills.css');      /* Tech stack & skill bars           */
+@import url('projects.css');    /* Project cards                     */
+@import url('achievements.css');/* Timeline + certification cards    */
+@import url('czernode.css');    /* Czernode universe section         */
+@import url('game.css');        /* Canvas game section               */
+@import url('contact.css');     /* Contact form + social links       */
+@import url('chatbot.css');     /* Floating chatbot UI               */
+@import url('footer.css');      /* Footer                            */
+@import url('responsive.css');  /* Media queries (must be last)      */

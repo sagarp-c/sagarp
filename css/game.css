@@ -1,0 +1,69 @@
+/* ═══════════════ GAME ═══════════════ */
+#game {
+  background: var(--bg);
+  padding: 80px clamp(1rem, 3vw, 2rem) 60px
+}
+
+.gwrap {
+  max-width: 900px;
+  margin: 0 auto
+}
+
+.ghdr {
+  text-align: center;
+  margin-bottom: 20px
+}
+
+.ghdr h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(.9rem, 3vw, 1.6rem);
+  color: var(--cyn);
+  text-shadow: 0 0 18px var(--cyn);
+  margin-bottom: 5px
+}
+
+.ghdr p {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(.6rem, 1.5vw, .82rem);
+  color: var(--org);
+  letter-spacing: .2em;
+  text-transform: uppercase
+}
+
+#gc {
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  border: 1px solid var(--brd);
+  box-shadow: 0 0 36px rgba(0, 212, 255, .18);
+  cursor: pointer;
+  touch-action: none
+}
+
+.gctls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap
+}
+
+.gct {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Fira Code', monospace;
+  font-size: .67rem;
+  color: var(--mut)
+}
+
+.gct kbd {
+  background: var(--bg3);
+  border: 1px solid var(--brd);
+  padding: 2px 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: .6rem;
+  color: var(--cyn);
+  border-radius: 2px
+}

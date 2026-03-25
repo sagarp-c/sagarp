@@ -1,0 +1,37 @@
+<!-- CHATBOT -->
+<button id="cbt" onclick="openChat()" title="Chat with Sagar's AI">
+  <img src="2nd.png" alt="Chat"
+    onerror="this.innerHTML='<i class=&quot;fas fa-robot&quot;></i>';this.style.cssText='font-size:1.3rem;color:#fff'">
+  <div class="cnotif"></div>
+</button>
+<div id="chatbox">
+  <div class="chdr">
+    <img class="cav" src="2nd.png" alt="Sagar" onerror="this.style.display='none'">
+    <div>
+      <div class="chn2">SAGAR.AI</div>
+      <div class="chst">● ONLINE // Ask me anything</div>
+    </div>
+    <button class="cx" onclick="closeChat()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cqb">
+    <button class="qb" onclick="askBot('Tell me about your projects')">projects</button>
+    <button class="qb" onclick="askBot('What are your skills?')">skills</button>
+    <button class="qb" onclick="askBot('How to contact you?')">contact</button>
+    <button class="qb" onclick="askBot('Tell me about yourself')">about</button>
+    <button class="qb" onclick="askBot('What is Czernode?')">czernode</button>
+    <button class="qb" onclick="askBot('Why hire you?')">hire?</button>
+  </div>
+  <div class="cmsgs" id="cmsgs">
+    <div class="msg mbot">Initializing SAGAR.AI v2.0...\n▶ System ready. I can answer questions about Sagar's
+      projects, skills, achievements, or how to collaborate.\n\nFor full AI mode, enter your Anthropic API key below
+      🔑</div>
+  </div>
+  <div class="capi">
+    <input id="apii" type="password" placeholder="Optional: sk-ant-... (Anthropic API key)">
+    <button id="apib" onclick="saveKey()">SET KEY</button>
+  </div>
+  <div class="cinr">
+    <input id="ci" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button id="cs" onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>

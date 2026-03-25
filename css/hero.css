@@ -1,0 +1,300 @@
+/* ═══════════════ HERO ═══════════════ */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px clamp(1rem, 4vw, 3rem) 60px
+}
+
+#hcanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none
+}
+
+.hero-c {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 860px;
+  width: 100%
+}
+
+.htag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: .7rem;
+  color: var(--cyn);
+  border: 1px solid rgba(0, 212, 255, .35);
+  padding: 4px 14px;
+  margin-bottom: 1.8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  box-shadow: 0 0 14px rgba(0, 212, 255, .15)
+}
+
+.hdot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--grn);
+  box-shadow: 0 0 8px var(--grn);
+  animation: blink 1.2s infinite
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: .2
+  }
+}
+
+.hname {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(2rem, 8vw, 4.8rem);
+  line-height: 1.15;
+  margin-bottom: .6rem;
+  display: block
+}
+
+.gn {
+  position: relative;
+  display: inline-block
+}
+
+.gn::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-shadow: -2px 0 var(--pnk);
+  animation: gl1 2.5s infinite alternate-reverse
+}
+
+.gn::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-shadow: 2px 0 var(--cyn);
+  animation: gl2 2.5s infinite alternate-reverse
+}
+
+@keyframes gl1 {
+  0% {
+    clip-path: inset(0 0 92% 0)
+  }
+
+  50% {
+    clip-path: inset(30% 0 40% 0)
+  }
+
+  100% {
+    clip-path: inset(68% 0 5% 0)
+  }
+}
+
+@keyframes gl2 {
+  0% {
+    clip-path: inset(52% 0 28% 0)
+  }
+
+  50% {
+    clip-path: inset(12% 0 62% 0)
+  }
+
+  100% {
+    clip-path: inset(80% 0 5% 0)
+  }
+}
+
+.nw {
+  color: #fff
+}
+
+.ng {
+  background: linear-gradient(90deg, var(--red), var(--pur), var(--pnk));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: .3em
+}
+
+.htagl {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(.85rem, 2vw, 1.22rem);
+  color: var(--txt);
+  min-height: 1.6em;
+  margin: .5rem auto;
+  border-right: 2px solid var(--org);
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom
+}
+
+.hpills {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1.3rem 0
+}
+
+.pill {
+  font-family: 'Fira Code', monospace;
+  font-size: .67rem;
+  padding: 5px 13px;
+  border-radius: 2px;
+  border: 1px solid;
+  letter-spacing: .08em;
+  transition: all .22s;
+  cursor: default
+}
+
+.pp {
+  border-color: var(--pur);
+  color: var(--pur)
+}
+
+.pp:hover {
+  background: var(--pur);
+  color: #fff;
+  box-shadow: 0 0 14px var(--pur)
+}
+
+.pc {
+  border-color: var(--cyn);
+  color: var(--cyn)
+}
+
+.pc:hover {
+  background: var(--cyn);
+  color: #000;
+  box-shadow: 0 0 14px var(--cyn)
+}
+
+.pk {
+  border-color: var(--pnk);
+  color: var(--pnk)
+}
+
+.pk:hover {
+  background: var(--pnk);
+  color: #fff;
+  box-shadow: 0 0 14px var(--pnk)
+}
+
+.po {
+  border-color: var(--org);
+  color: var(--org)
+}
+
+.po:hover {
+  background: var(--org);
+  color: #000;
+  box-shadow: 0 0 14px var(--org)
+}
+
+.hbtns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem
+}
+
+.btnp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  background: linear-gradient(90deg, var(--red), var(--pur));
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+  font-size: .8rem;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all .25s;
+  text-transform: uppercase;
+  letter-spacing: .05em
+}
+
+.btnp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, .45)
+}
+
+.btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 25px;
+  background: transparent;
+  color: var(--cyn);
+  font-family: 'Fira Code', monospace;
+  font-size: .8rem;
+  border: 1px solid var(--cyn);
+  cursor: pointer;
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+  transition: all .25s;
+  text-transform: uppercase;
+  letter-spacing: .05em
+}
+
+.btns:hover {
+  background: rgba(0, 212, 255, .1);
+  box-shadow: 0 0 20px rgba(0, 212, 255, .3);
+  transform: translateY(-3px)
+}
+
+.scrhint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  animation: sbounce .9s infinite alternate
+}
+
+.scrhint span {
+  font-family: 'Fira Code', monospace;
+  font-size: .6rem;
+  color: var(--mut);
+  letter-spacing: .1em
+}
+
+.scrhint i {
+  color: var(--pur)
+}
+
+@keyframes sbounce {
+  0% {
+    transform: translateX(-50%) translateY(0)
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(8px)
+  }
+}

@@ -1,0 +1,57 @@
+/* ═══════════════ ROOT VARIABLES + RESET ═══════════════ */
+:root {
+  --bg: #050508;
+  --bg2: #09090f;
+  --bg3: #0d0d1a;
+  --brd: rgba(124, 58, 237, .22);
+  --blw: rgba(124, 58, 237, .55);
+  --pur: #7C3AED;
+  --pnk: #EC4899;
+  --grn: #00FF88;
+  --cyn: #00D4FF;
+  --org: #FF8C00;
+  --red: #DC2626;
+  --txt: #E2E8F0;
+  --mut: #64748B
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--bg);
+  color: var(--txt);
+  overflow-x: hidden
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+img {
+  max-width: 100%
+}
+
+::-webkit-scrollbar {
+  width: 5px
+}
+
+::-webkit-scrollbar-track {
+  background: #09090f
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pur);
+  border-radius: 3px
+}

@@ -1,0 +1,132 @@
+/* ═══════════════ NAV ═══════════════ */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 8, .88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--brd);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  justify-content: space-between
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0
+}
+
+.nav-logo img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--pur);
+  box-shadow: 0 0 10px var(--pur);
+  object-fit: cover
+}
+
+.nav-logo span {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  background: linear-gradient(90deg, var(--pur), var(--pnk));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none
+}
+
+.nav-links a {
+  font-family: 'Fira Code', monospace;
+  font-size: .73rem;
+  color: var(--mut);
+  transition: color .2s;
+  position: relative
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--cyn);
+  transform: scaleX(0);
+  transition: transform .2s
+}
+
+.nav-links a:hover,
+.nav-links a.act {
+  color: var(--cyn)
+}
+
+.nav-links a:hover::after,
+.nav-links a.act::after {
+  transform: scaleX(1)
+}
+
+.nav-soc {
+  display: flex;
+  gap: 13px;
+  flex-shrink: 0
+}
+
+.nav-soc a {
+  color: var(--mut);
+  font-size: .85rem;
+  transition: all .2s
+}
+
+.nav-soc a:hover {
+  color: var(--pnk);
+  text-shadow: 0 0 8px var(--pnk)
+}
+
+#ham {
+  display: none;
+  background: none;
+  border: 1px solid var(--brd);
+  color: var(--txt);
+  padding: 6px 10px;
+  cursor: pointer
+}
+
+#mob {
+  display: none;
+  position: fixed;
+  top: 62px;
+  left: 0;
+  right: 0;
+  background: rgba(5, 5, 8, .97);
+  border-bottom: 1px solid var(--brd);
+  z-index: 999;
+  padding: 1rem 1.5rem;
+  flex-direction: column
+}
+
+#mob.open {
+  display: flex
+}
+
+#mob a {
+  padding: .65rem 0;
+  font-family: 'Fira Code', monospace;
+  font-size: .8rem;
+  color: var(--mut);
+  border-bottom: 1px solid var(--brd)
+}
+
+#mob a:hover {
+  color: var(--cyn)
+}

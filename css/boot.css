@@ -1,0 +1,75 @@
+/* ═══════════════ BOOT ═══════════════ */
+#boot {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9998;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Code', monospace
+}
+
+#boot.show {
+  display: flex
+}
+
+#blines {
+  font-size: clamp(9px, 1.3vw, 12px);
+  color: var(--grn);
+  width: min(640px, 92vw);
+  line-height: 2
+}
+
+.bl {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all .22s ease
+}
+
+.bl.vis {
+  opacity: 1;
+  transform: none
+}
+
+.bl.ok {
+  color: var(--cyn)
+}
+
+.bl.err {
+  color: #FF4500
+}
+
+.bl.warn {
+  color: #FFD700
+}
+
+#bbar-w {
+  width: min(640px, 92vw);
+  margin-top: 18px;
+  border: 1px solid var(--grn);
+  padding: 3px
+}
+
+#bbar {
+  height: 5px;
+  background: linear-gradient(90deg, var(--pur), var(--pnk), var(--grn));
+  box-shadow: 0 0 10px var(--grn);
+  width: 0%;
+  transition: width .05s linear
+}
+
+#blogo-w {
+  margin-bottom: 26px;
+  text-align: center
+}
+
+#blogo {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid var(--pur);
+  box-shadow: 0 0 24px var(--pur);
+  object-fit: cover
+}

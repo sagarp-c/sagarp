@@ -1,0 +1,59 @@
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media(max-width:768px) {
+
+  .ag,
+  .czg,
+  .cntgrid {
+    grid-template-columns: 1fr
+  }
+
+  .czart {
+    order: -1
+  }
+
+  .nav-links,
+  .nav-soc {
+    display: none
+  }
+
+  #ham {
+    display: block
+  }
+
+  .tl::before {
+    left: 14px
+  }
+
+  .tld {
+    width: 28px;
+    height: 28px;
+    left: 0
+  }
+
+  .tli {
+    padding-left: 42px
+  }
+
+  .sg {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .pgrid {
+    grid-template-columns: 1fr
+  }
+
+  .htagl {
+    font-size: 0.9rem;
+    letter-spacing: -0.5px;
+  }
+
+  .hname {
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media(max-width:480px) {
+  .hname {
+    font-size: clamp(1.6rem, 8vw, 2.5rem)
+  }
+}

@@ -1,0 +1,243 @@
+/* ═══════════════ CHATBOT ═══════════════ */
+#cbt {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 2000;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pur), var(--pnk));
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 22px rgba(124, 58, 237, .5);
+  transition: all .3s
+}
+
+#cbt:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 38px rgba(236, 72, 153, .5)
+}
+
+#cbt img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover
+}
+
+.cnotif {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--grn);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 5px var(--grn)
+}
+
+#chatbox {
+  position: fixed;
+  bottom: 84px;
+  right: 22px;
+  width: clamp(300px, 90vw, 340px);
+  max-height: 520px;
+  background: var(--bg3);
+  border: 1px solid var(--brd);
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 0 36px rgba(0, 0, 0, .6)
+}
+
+#chatbox.open {
+  display: flex
+}
+
+.chdr {
+  background: linear-gradient(90deg, rgba(124, 58, 237, .3), rgba(236, 72, 153, .2));
+  padding: 11px 15px;
+  border-bottom: 1px solid var(--brd);
+  display: flex;
+  align-items: center;
+  gap: 9px
+}
+
+.cav {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--pur);
+  object-fit: cover
+}
+
+.chn2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--txt)
+}
+
+.chst {
+  font-family: 'Fira Code', monospace;
+  font-size: .62rem;
+  color: var(--grn)
+}
+
+.cx {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--mut);
+  cursor: pointer;
+  font-size: .95rem;
+  transition: color .2s
+}
+
+.cx:hover {
+  color: var(--pnk)
+}
+
+.cmsgs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-height: 330px
+}
+
+.cmsgs::-webkit-scrollbar {
+  width: 3px
+}
+
+.cmsgs::-webkit-scrollbar-thumb {
+  background: var(--pur)
+}
+
+.msg {
+  max-width: 82%;
+  padding: 8px 11px;
+  font-family: 'Fira Code', monospace;
+  font-size: .74rem;
+  line-height: 1.6;
+  white-space: pre-wrap
+}
+
+.mbot {
+  background: rgba(124, 58, 237, .15);
+  border: 1px solid rgba(124, 58, 237, .3);
+  color: var(--txt);
+  align-self: flex-start;
+  border-radius: 0 4px 4px 4px
+}
+
+.musr {
+  background: rgba(236, 72, 153, .15);
+  border: 1px solid rgba(236, 72, 153, .3);
+  color: var(--txt);
+  align-self: flex-end;
+  border-radius: 4px 0 4px 4px
+}
+
+.cqb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 6px 11px;
+  border-top: 1px solid var(--brd)
+}
+
+.qb {
+  font-family: 'Fira Code', monospace;
+  font-size: .6rem;
+  color: var(--mut);
+  border: 1px solid var(--brd);
+  background: none;
+  padding: 3px 7px;
+  cursor: pointer;
+  transition: all .2s
+}
+
+.qb:hover {
+  color: var(--cyn);
+  border-color: var(--cyn)
+}
+
+.capi {
+  display: flex;
+  gap: 6px;
+  padding: 7px 11px;
+  border-top: 1px solid var(--brd)
+}
+
+#apii {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--brd);
+  color: var(--mut);
+  font-family: 'Fira Code', monospace;
+  font-size: .62rem;
+  padding: 4px 8px;
+  outline: none
+}
+
+#apii:focus {
+  border-color: var(--pur)
+}
+
+#apib {
+  background: rgba(124, 58, 237, .2);
+  border: 1px solid var(--brd);
+  color: var(--pur);
+  font-family: 'Fira Code', monospace;
+  font-size: .62rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap
+}
+
+#apib:hover {
+  background: var(--pur);
+  color: #fff
+}
+
+.cinr {
+  display: flex;
+  border-top: 1px solid var(--brd)
+}
+
+#ci {
+  flex: 1;
+  background: var(--bg);
+  border: none;
+  color: var(--txt);
+  font-family: 'Fira Code', monospace;
+  font-size: .74rem;
+  padding: 10px 12px;
+  outline: none
+}
+
+#ci::placeholder {
+  color: var(--mut)
+}
+
+#cs {
+  background: var(--pur);
+  border: none;
+  color: #fff;
+  padding: 0 13px;
+  cursor: pointer;
+  transition: background .2s
+}
+
+#cs:hover {
+  background: var(--pnk)
+}

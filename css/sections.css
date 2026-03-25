@@ -1,0 +1,53 @@
+/* ═══════════════ COMMON SECTION UTILITIES ═══════════════ */
+.sw {
+  padding: 80px clamp(1rem, 4vw, 3rem)
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto
+}
+
+.sh {
+  text-align: center;
+  margin-bottom: 52px
+}
+
+.slbl {
+  font-family: 'Fira Code', monospace;
+  font-size: .7rem;
+  color: var(--cyn);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px
+}
+
+.stit {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--txt), var(--pur));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px
+}
+
+.slin {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pur), var(--pnk));
+  margin: 0 auto;
+  box-shadow: 0 0 10px var(--pur)
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s ease, transform .6s ease
+}
+
+.reveal.vis {
+  opacity: 1;
+  transform: none
+}

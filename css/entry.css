@@ -1,0 +1,139 @@
+/* ═══════════════ ENTRY ═══════════════ */
+#entry {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden
+}
+
+#escan {
+  position: absolute;
+  top: -2%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--cyn), var(--grn), transparent);
+  box-shadow: 0 0 40px var(--cyn);
+  animation: scan 2s ease forwards
+}
+
+@keyframes scan {
+  to {
+    top: 102%
+  }
+}
+
+#egrid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 212, 255, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, .04) 1px, transparent 1px);
+  background-size: 45px 45px;
+  opacity: 0;
+  animation: gfade 2.5s ease .2s forwards
+}
+
+@keyframes gfade {
+  0% {
+    opacity: 0
+  }
+
+  40% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+.elogo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--pur);
+  box-shadow: 0 0 40px var(--pur), 0 0 80px rgba(124, 58, 237, .3);
+  animation: lpulse 1.8s ease-in-out infinite alternate
+}
+
+@keyframes lpulse {
+  to {
+    box-shadow: 0 0 60px var(--pur), 0 0 100px rgba(124, 58, 237, .4)
+  }
+}
+
+.ename {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.4rem, 5vw, 3rem);
+  color: #fff;
+  margin-top: 22px;
+  animation: glitch-e 2.5s steps(1) infinite
+}
+
+@keyframes glitch-e {
+
+  0%,
+  100% {
+    text-shadow: none
+  }
+
+  8% {
+    text-shadow: -3px 0 var(--cyn), 3px 0 var(--pnk)
+  }
+
+  18% {
+    text-shadow: none
+  }
+
+  28% {
+    text-shadow: 3px 0 var(--cyn), -3px 0 var(--pnk)
+  }
+
+  38% {
+    text-shadow: none
+  }
+}
+
+.esub {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(.6rem, 1.5vw, .82rem);
+  color: var(--cyn);
+  margin-top: 10px;
+  letter-spacing: .3em;
+  opacity: 0;
+  animation: fin .4s ease 1s forwards
+}
+
+.ebar-wrap {
+  width: min(340px, 82vw);
+  margin-top: 26px;
+  border: 1px solid rgba(0, 212, 255, .3);
+  padding: 3px;
+  opacity: 0;
+  animation: fin .4s ease 1.1s forwards
+}
+
+.ebar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--pur), var(--cyn), var(--grn));
+  box-shadow: 0 0 12px var(--cyn);
+  animation: bfill 1.6s ease 1.2s forwards;
+  width: 0
+}
+
+@keyframes bfill {
+  to {
+    width: 100%
+  }
+}
+
+@keyframes fin {
+  to {
+    opacity: 1
+  }
+}

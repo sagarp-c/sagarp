@@ -31,7 +31,7 @@
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 1.8rem
+  margin-bottom: 3.6rem
 }
 
 .htag {
@@ -103,9 +103,22 @@
 }
 
 @keyframes hname-breathe {
-  0%, 100% { filter: drop-shadow(0 0 8px rgba(124,58,237,.4)) drop-shadow(0 0 20px rgba(124,58,237,.15)); letter-spacing: 0.02em; }
-  33%       { filter: drop-shadow(0 0 14px rgba(0,212,255,.5)) drop-shadow(0 0 30px rgba(0,212,255,.2)); letter-spacing: 0.04em; }
-  66%       { filter: drop-shadow(0 0 12px rgba(236,72,153,.45)) drop-shadow(0 0 26px rgba(236,72,153,.18)); letter-spacing: 0.03em; }
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(124, 58, 237, .4)) drop-shadow(0 0 20px rgba(124, 58, 237, .15));
+    letter-spacing: 0.02em;
+  }
+
+  33% {
+    filter: drop-shadow(0 0 14px rgba(0, 212, 255, .5)) drop-shadow(0 0 30px rgba(0, 212, 255, .2));
+    letter-spacing: 0.04em;
+  }
+
+  66% {
+    filter: drop-shadow(0 0 12px rgba(236, 72, 153, .45)) drop-shadow(0 0 26px rgba(236, 72, 153, .18));
+    letter-spacing: 0.03em;
+  }
 }
 
 .gn {
@@ -201,8 +214,15 @@
 }
 
 @keyframes cur-blink {
-  0%, 100% { opacity: 1 }
-  50%       { opacity: 0 }
+
+  0%,
+  100% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
 }
 
 .hpills {

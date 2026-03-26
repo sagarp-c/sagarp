@@ -5,14 +5,48 @@
       <h2>CZERNODE</h2>
       <p>CORE BREACH // DUAL MODE</p>
     </div>
-    <div id="gmodebtns" class="gmoderow"></div>
-    <canvas id="gc" width="860" height="390"></canvas>
-    <div class="gctls reveal">
-      <div class="gct"><kbd>SPACE</kbd><kbd>↑</kbd> Jump (×2)</div>
-      <div class="gct"><kbd>CLICK</kbd> Start/Jump</div>
+    <div class="gtop-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 860px; margin-left: auto; margin-right: auto;">
+      <div style="display: flex; gap: 10px; flex: 1; justify-content: flex-start;">
+        <button id="btnControls" class="gmbtn" style="font-size: 10px; padding: 4px 8px;" title="Toggle On-Screen Controls">🎮 CTRL: ON</button>
+      </div>
+      <div id="gmodebtns" class="gmoderow" style="margin: 0; justify-content: center; flex: 2;"></div>
+      <div class="gtools" style="display: flex; gap: 10px; flex: 1; justify-content: flex-end;">
+        <button id="btnSound" class="gmbtn" style="font-size: 10px; padding: 4px 8px;">🔊 OFF</button>
+        <button id="btnPause" class="gmbtn" style="font-size: 10px; padding: 4px 8px;">⏸ PAUSE</button>
+      </div>
+    </div>
+    <div id="canvasWrap" style="position: relative; width: 100%; max-width: 860px; margin: 0 auto; overflow: hidden; border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 4px;">
+      <canvas id="gc" width="860" height="390" style="display: block; width: 100%; height: auto; max-width: 100%;"></canvas>
+      
+      <!-- Mobile Controls Container -->
+      <div id="mobileControls" style="display: none; position: absolute; bottom: 15px; left: 15px; right: 15px; justify-content: space-between; pointer-events: none; z-index: 10;">
+        <div style="display: flex; gap: 10px; pointer-events: auto;">
+          <button id="mcLeft" style="width: 50px; height: 50px; background: rgba(0,0,0,0.6); border: 2px solid rgba(0,212,255,0.6); color: #00D4FF; border-radius: 8px; font-size: 20px; user-select: none;">◄</button>
+          <button id="mcRight" style="width: 50px; height: 50px; background: rgba(0,0,0,0.6); border: 2px solid rgba(0,212,255,0.6); color: #00D4FF; border-radius: 8px; font-size: 20px; user-select: none;">►</button>
+        </div>
+        <div style="display: flex; gap: 10px; pointer-events: auto; flex-direction: column; align-items: flex-end;">
+          <div style="display: flex; gap: 10px;">
+             <button id="mcUp" style="width: 50px; height: 50px; background: rgba(0,0,0,0.6); border: 2px solid rgba(168,85,247,0.6); color: #A855F7; border-radius: 8px; font-size: 20px; user-select: none; display: none;">▲</button>
+             <button id="mcDown" style="width: 50px; height: 50px; background: rgba(0,0,0,0.6); border: 2px solid rgba(168,85,247,0.6); color: #A855F7; border-radius: 8px; font-size: 20px; user-select: none; display: none;">▼</button>
+          </div>
+          <button id="mcJump" style="width: 60px; height: 60px; background: rgba(0,0,0,0.6); border: 2px solid rgba(0,255,136,0.6); color: #00FF88; border-radius: 8px; font-size: 24px; user-select: none; font-weight: bold;">●</button>
+        </div>
+      </div>
+
+      <!-- Pause Menu -->
+      <div id="pauseMenu" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(2, 5, 18, 0.85); flex-direction: column; justify-content: center; align-items: center; color: white; z-index: 20; backdrop-filter: blur(4px);">
+        <h2 style="font-family: 'Press Start 2P', cursive; color: #FF0040; text-shadow: 0 0 15px #FF0040; margin-bottom: 10px; font-size: clamp(14px, 3vw, 24px); text-align: center;">SYSTEM PAUSED</h2>
+        <p style="font-family: 'Fira Code', monospace; color: #00D4FF; margin-bottom: 30px; opacity: 0.8; font-size: 14px;">>> AWAITING INPUT...</p>
+        <button id="btnResume" class="gmbtn" style="margin-bottom: 15px; border-color: #00FF88; color: #00FF88; text-shadow: 0 0 5px #00FF88; width: 150px;">▶ RESUME</button>
+        <button id="btnRestart" class="gmbtn" style="border-color: #FF8C00; color: #FF8C00; text-shadow: 0 0 5px #FF8C00; width: 150px;">↻ RESTART</button>
+      </div>
+    </div>
+    <div class="gctls reveal" style="margin-top: 20px;">
+      <div class="gct"><kbd>A</kbd><kbd>D</kbd> or <kbd>←</kbd><kbd>→</kbd> Move</div>
+      <div class="gct"><kbd>W</kbd><kbd>S</kbd> Climb</div>
+      <div class="gct"><kbd>SPACE</kbd> Jump</div>
+      <div class="gct"><kbd>P</kbd> Pause</div>
       <div class="gct"><kbd>R</kbd> Restart</div>
-      <div class="gct"><i class="fas fa-bolt" style="color:var(--cyn)"></i>&nbsp;Auto-Fire</div>
-      <div class="gct"><kbd>TAP</kbd> Mobile OK</div>
     </div>
   </div>
 </section>

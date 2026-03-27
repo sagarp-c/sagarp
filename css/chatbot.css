@@ -5,16 +5,16 @@
   right: 22px;
   z-index: 2000;
   width: auto;
-  height: 48px;
-  padding: 0 18px;
+  height: 40px;
+  padding: 0 10px;
   border-radius: 0;
-  background: linear-gradient(135deg, rgba(10,5,30,.95), rgba(18,8,40,.95));
+  background: linear-gradient(135deg, rgba(10, 5, 30, .95), rgba(18, 8, 40, .95));
   border: 1px solid var(--pur);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 18px rgba(124, 58, 237, .4), inset 0 0 12px rgba(124,58,237,.06);
+  box-shadow: 0 0 18px rgba(124, 58, 237, .4), inset 0 0 12px rgba(124, 58, 237, .06);
   transition: all .3s;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
   overflow: visible
@@ -22,20 +22,20 @@
 
 #cbt:hover {
   border-color: var(--cyn);
-  box-shadow: 0 0 32px rgba(0, 212, 255, .5), inset 0 0 18px rgba(0,212,255,.08);
+  box-shadow: 0 0 32px rgba(0, 212, 255, .5), inset 0 0 18px rgba(0, 212, 255, .08);
   transform: translateY(-3px)
 }
 
 .cbt-inner {
   display: flex;
   align-items: center;
-  gap: 7px
+  gap: 5px
 }
 
 .cbt-icon {
   font-size: 1rem;
   line-height: 1;
-  filter: drop-shadow(0 0 6px rgba(124,58,237,.8))
+  filter: drop-shadow(0 0 6px rgba(124, 58, 237, .8))
 }
 
 .cbt-label {
@@ -50,15 +50,24 @@
 .cbt-ring {
   position: absolute;
   inset: -4px;
-  border: 1px solid rgba(124,58,237,.3);
+  border: 1px solid rgba(124, 58, 237, .3);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
   animation: cbt-pulse 2.5s ease-in-out infinite;
   pointer-events: none
 }
 
 @keyframes cbt-pulse {
-  0%, 100% { opacity: .3; transform: scale(1); }
-  50%       { opacity: 1;  transform: scale(1.03); }
+
+  0%,
+  100% {
+    opacity: .3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
 }
 
 .cnotif {

@@ -202,3 +202,10 @@ async function sendChat() {
   } else { setTimeout(() => addBot(staticReply(msg)), 380); }
 }
 function askBot(q) { document.getElementById('ci').value = q; openChat(); sendChat(); }
+
+
+// ═══════════════ CARD FLIP ═══════════════
+function flipCard(el) {
+  const card = el.closest('.pcard');
+  card.classList.toggle('flipped');
+}

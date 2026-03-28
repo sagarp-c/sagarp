@@ -153,3 +153,56 @@
   border-color: var(--cyn);
   box-shadow: 0 0 8px rgba(0, 212, 255, .2)
 }
+
+/* ═══════════════ CARD FLIP ADDON ═══════════════ */
+
+.pcard {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .6s ease;
+  transform-style: preserve-3d;
+}
+
+.pcard.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+}
+
+.ptm {
+  font-size: .70rem;
+  font-family: 'Fira Code', monospace;
+  color: var(--cyn);
+  margin-bottom: 6px;
+  opacity: .8;
+}
+
+.roles {
+  font-size: .75rem;
+  color: rgba(226, 232, 240, .75);
+  line-height: 1.6;
+  padding-left: 16px;
+  margin-bottom: 15px;
+}
+
+.role-btn {
+  cursor: pointer;
+  background-color: rgba(107, 93, 214, 0.2);
+}

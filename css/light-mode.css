@@ -244,10 +244,26 @@ body.light-mode .sbrl {
   font-weight: 600;
 }
 
-/* Ensure #theme-toggle doesn't change size when icon swaps */
-body.light-mode #theme-toggle,
-#theme-toggle {
-  color: var(--mut);
+/* Pill Toggle Light Mode Overrides */
+body.light-mode #theme-toggle {
+  background: #f8f9fa !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .t-circle {
+  transform: translateX(46px) !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
+}
+
+body.light-mode .t-text {
+  padding-left: 0 !important;
+  padding-right: 24px !important;
+  color: #a3a3a3 !important;
+}
+
+body.light-mode .t-circle i {
+  color: #a3a3a3 !important;
 }
 
 /* ═══════════════ FLASH SCREENS (LIGHT MODE) ═══════════════ */

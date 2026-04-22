@@ -103,21 +103,57 @@
 }
 
 #theme-toggle {
-  background: none;
-  border: none;
+  background: #1a1a24;
+  border: 1px solid rgba(255,255,255,0.1) !important;
   color: var(--mut);
-  font-size: .85rem;
   cursor: pointer;
-  transition: all .2s;
-  padding: 0;
-  display: inline-block;
-  min-width: 1.25em;
-  text-align: center;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 76px !important;
+  height: 30px !important;
+  border-radius: 999px !important;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
 }
 
-#theme-toggle:hover {
-  color: var(--cyn);
-  text-shadow: 0 0 8px var(--cyn);
+.t-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  text-align: center;
+  flex: 1;
+  padding-left: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.t-circle {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 3px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-sizing: border-box !important;
+}
+
+.t-circle i {
+  color: #1a1a24;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
 }
 
 #ham {

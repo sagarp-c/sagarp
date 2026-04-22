@@ -213,29 +213,31 @@ function flipCard(el) {
 // ═══════════════ THEME TOGGLE ═══════════════
 function toggleTheme() {
   const body = document.body;
-  const icon = document.querySelector('#theme-toggle i');
+  const icon = document.getElementById('t-icon');
+  const text = document.getElementById('t-text');
   
   body.classList.toggle('light-mode');
   
   if (body.classList.contains('light-mode')) {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
+    if (icon) icon.className = 'fas fa-sun';
+    if (text) text.innerHTML = 'LIGHT<br>MODE';
     localStorage.setItem('theme', 'light');
   } else {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+    if (icon) icon.className = 'fas fa-moon';
+    if (text) text.innerHTML = 'DARK<br>MODE';
     localStorage.setItem('theme', 'dark');
   }
 }
 
 // Set initial icon on load based on default body class
 (function initThemeIcon() {
-  const icon = document.querySelector('#theme-toggle i');
-  if (icon && document.body.classList.contains('light-mode')) {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-  } else if (icon) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+  const icon = document.getElementById('t-icon');
+  const text = document.getElementById('t-text');
+  if (document.body.classList.contains('light-mode')) {
+    if (icon) icon.className = 'fas fa-sun';
+    if (text) text.innerHTML = 'LIGHT<br>MODE';
+  } else {
+    if (icon) icon.className = 'fas fa-moon';
+    if (text) text.innerHTML = 'DARK<br>MODE';
   }
 })();

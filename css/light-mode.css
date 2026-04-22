@@ -1,0 +1,284 @@
+/* ═══════════════ LIGHT MODE OVERRIDES ═══════════════ */
+body.light-mode {
+  /* Colors */
+  --bg: #f8f9fa;
+  --bg2: #ffffff;
+  --bg3: #e9ecef;
+  --txt: #212529;
+  --mut: #6c757d;
+  
+  /* Retain brand accents but without neon glow context */
+  --pur: #4f46e5;
+  --pnk: #db2777;
+  --grn: #059669;
+  --cyn: #0284c7;
+  --org: #ea580c;
+  --red: #e11d48;
+
+  /* Adjust borders for light mode */
+  --brd: rgba(79, 70, 229, 0.2);
+  --blw: rgba(79, 70, 229, 0.1);
+
+  /* Professional typography for headers */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+
+/* Adapt glitch animation and text shadows for light mode */
+@keyframes hname-breathe-light {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(79, 70, 229, 0.15)) drop-shadow(0 0 10px rgba(79, 70, 229, 0.05));
+    letter-spacing: 0.01em;
+  }
+  33% {
+    filter: drop-shadow(0 0 6px rgba(2, 132, 199, 0.15)) drop-shadow(0 0 15px rgba(2, 132, 199, 0.05));
+    letter-spacing: 0.02em;
+  }
+  66% {
+    filter: drop-shadow(0 0 5px rgba(219, 39, 119, 0.15)) drop-shadow(0 0 12px rgba(219, 39, 119, 0.05));
+    letter-spacing: 0.015em;
+  }
+}
+
+body.light-mode .hname {
+  animation: hname-breathe-light 4s ease-in-out infinite !important;
+}
+
+body.light-mode .gn {
+  text-shadow: none !important;
+}
+
+body.light-mode .gn::before {
+  text-shadow: -2px 0 rgba(219, 39, 119, 0.6) !important;
+}
+
+body.light-mode .gn::after {
+  text-shadow: 2px 0 rgba(2, 132, 199, 0.6) !important;
+}
+
+body.light-mode .nw {
+  color: var(--txt) !important;
+}
+
+/* Keep subtle background opacity in light mode */
+body.light-mode #hcanvas {
+  opacity: 0.5 !important;
+}
+
+/* Turn gradient text into solid text */
+body.light-mode .ng {
+  background: none !important;
+  -webkit-text-fill-color: var(--pur) !important;
+  color: var(--pur) !important;
+}
+
+/* Secondary headings professional look */
+body.light-mode .stit {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--txt) !important;
+  color: var(--txt) !important;
+  font-weight: 800;
+}
+
+/* Adjust card/element background and borders for better contrast in light mode */
+body.light-mode .pcard,
+body.light-mode .sbox,
+body.light-mode .acat,
+body.light-mode .kcat {
+  background: var(--bg2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .pcard:hover,
+body.light-mode .sbox:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Terminal / Input adjustments */
+body.light-mode input,
+body.light-mode textarea {
+  background: var(--bg) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--txt) !important;
+}
+
+/* Change navigation background */
+body.light-mode #nav {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Specific pill and badge adjustments if needed */
+body.light-mode .htag {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: var(--txt);
+  box-shadow: none;
+}
+
+body.light-mode .pill {
+  background: var(--bg2);
+  color: var(--txt);
+  border-color: #cbd5e1;
+}
+
+body.light-mode .pill:hover {
+  background: #f1f5f9;
+  color: var(--txt);
+  box-shadow: none;
+}
+
+body.light-mode .hresume {
+  background: #fff7ed;
+  border-color: #fdba74;
+  color: #c2410c;
+  box-shadow: none;
+}
+
+body.light-mode .hresume:hover {
+  background: #ffedd5;
+  color: #c2410c;
+  transform: translateY(-2px);
+}
+
+body.light-mode .btnp {
+  background: var(--pur);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+body.light-mode .btns {
+  border-color: #cbd5e1;
+  color: var(--txt);
+  box-shadow: none;
+}
+
+body.light-mode .btns:hover {
+  background: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #theme-toggle {
+  background: none;
+  border: none;
+  color: var(--txt);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+body.light-mode #theme-toggle:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Chatbot overrides */
+body.light-mode #chatbox {
+  background: var(--bg2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .chead {
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .mbot {
+  background: #f1f5f9;
+  color: var(--txt);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .musr {
+  background: var(--pur);
+  color: #fff;
+  border: none;
+}
+
+body.light-mode .cfoot {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Visibility fixes for text that uses hardcoded light colors */
+body.light-mode .pds,
+body.light-mode .roles,
+body.light-mode .tdd,
+body.light-mode .ccb,
+body.light-mode .ar p,
+body.light-mode .fl li,
+body.light-mode .czinfo p,
+body.light-mode .czcopy {
+  color: #475569 !important;
+  font-weight: 500;
+}
+
+/* Fix visibility and contrast for tags, pills, and links */
+body.light-mode .pl { color: #334155 !important; border-color: #cbd5e1 !important; background: #f8fafc !important; font-weight: 600; }
+body.light-mode .pl:hover { color: #0284c7 !important; border-color: #0284c7 !important; background: #f0f9ff !important; }
+
+body.light-mode .stk { color: #5b21b6 !important; border-color: #a78bfa !important; background: #f5f3ff !important; font-weight: 600; }
+body.light-mode .tlb { color: #5b21b6 !important; border-color: #a78bfa !important; background: #f5f3ff !important; font-weight: 600; }
+body.light-mode .pim { color: #047857 !important; border-color: #047857 !important; background: #ecfdf5 !important; font-weight: 600; }
+body.light-mode .tlo { color: #0369a1 !important; font-weight: 600; }
+body.light-mode .sl { color: #64748b !important; font-weight: 600; }
+
+body.light-mode .kt-g { color: #047857 !important; border-color: #34d399 !important; background: #ecfdf5 !important; font-weight: 600; }
+body.light-mode .kt-c { color: #0369a1 !important; border-color: #38bdf8 !important; background: #f0f9ff !important; font-weight: 600; }
+body.light-mode .kt-p { color: #5b21b6 !important; border-color: #a78bfa !important; background: #f5f3ff !important; font-weight: 600; }
+body.light-mode .kt-k { color: #be185d !important; border-color: #f472b6 !important; background: #fdf2f8 !important; font-weight: 600; }
+body.light-mode .kt-o { color: #c2410c !important; border-color: #fb923c !important; background: #fff7ed !important; font-weight: 600; }
+
+body.light-mode .mut,
+body.light-mode .ppr,
+body.light-mode .sbrl {
+  color: #475569 !important;
+  font-weight: 600;
+}
+
+/* Ensure #theme-toggle doesn't change size when icon swaps */
+body.light-mode #theme-toggle,
+#theme-toggle {
+  color: var(--mut);
+}
+
+/* ═══════════════ FLASH SCREENS (LIGHT MODE) ═══════════════ */
+body.light-mode #entry,
+body.light-mode #boot {
+  background: var(--bg) !important;
+}
+
+body.light-mode .ename {
+  color: var(--txt) !important;
+  text-shadow: none !important;
+}
+
+body.light-mode .esub {
+  color: var(--pur) !important;
+  font-weight: 600;
+}
+
+body.light-mode #blines {
+  color: #334155 !important;
+  font-weight: 600;
+}
+
+body.light-mode .bl.ok {
+  color: var(--pur) !important;
+}
+
+body.light-mode .bl.err {
+  color: var(--red) !important;
+}
+
+body.light-mode .bl.warn {
+  color: var(--org) !important;
+}

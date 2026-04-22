@@ -79,7 +79,16 @@
 .nav-soc {
   display: flex;
   gap: 13px;
-  flex-shrink: 0
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.nav-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--mut);
+  opacity: 0.5;
+  margin: 0 2px;
 }
 
 .nav-soc a {
@@ -91,6 +100,24 @@
 .nav-soc a:hover {
   color: var(--pnk);
   text-shadow: 0 0 8px var(--pnk)
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: var(--mut);
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .2s;
+  padding: 0;
+  display: inline-block;
+  min-width: 1.25em;
+  text-align: center;
+}
+
+#theme-toggle:hover {
+  color: var(--cyn);
+  text-shadow: 0 0 8px var(--cyn);
 }
 
 #ham {

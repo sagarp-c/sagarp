@@ -209,3 +209,33 @@ function flipCard(el) {
   const card = el.closest('.pcard');
   card.classList.toggle('flipped');
 }
+
+// ═══════════════ THEME TOGGLE ═══════════════
+function toggleTheme() {
+  const body = document.body;
+  const icon = document.querySelector('#theme-toggle i');
+  
+  body.classList.toggle('light-mode');
+  
+  if (body.classList.contains('light-mode')) {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+    localStorage.setItem('theme', 'light');
+  } else {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+// Set initial icon on load based on default body class
+(function initThemeIcon() {
+  const icon = document.querySelector('#theme-toggle i');
+  if (icon && document.body.classList.contains('light-mode')) {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  } else if (icon) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  }
+})();

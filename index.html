@@ -14,9 +14,24 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/light-mode.css">
 </head>
 
-<body>
+<body class="light-mode">
+  <script>
+    // Instantly apply theme preference to prevent flash of wrong theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.remove('light-mode');
+    } else if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+    } else {
+      // Check device preference if no saved theme
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.remove('light-mode');
+      }
+    }
+  </script>
   <div id="site-root"></div>
   <script src="js/loader.js"></script>
 </body>

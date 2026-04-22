@@ -14,21 +14,26 @@
     <li><a href="#game">game</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
-  <div class="nav-soc">
+  <div class="nav-right">
     <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
-      <span class="t-text" id="t-text">DARK<br>MODE</span>
+      <div class="t-texts">
+        <span class="t-text text-dark">DARK<br>MODE</span>
+        <span class="t-text text-light">LIGHT<br>MODE</span>
+      </div>
       <div class="t-circle">
-        <i class="fas fa-moon" id="t-icon"></i>
+        <i class="fas fa-moon icon-dark"></i>
+        <i class="fas fa-sun icon-light"></i>
       </div>
     </button>
-    <div class="nav-sep"></div>
-    <a href="https://github.com/sagarp-c/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/sagarp-" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.youtube.com/@czernode" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/sagarp___" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <div class="nav-soc">
+      <div class="nav-sep"></div>
+      <a href="https://github.com/sagarp-c/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/sagarp-" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/@czernode" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/sagarp___" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <button id="ham" onclick="document.getElementById('mob').classList.toggle('open')"><i class="fas fa-bars"></i></button>
   </div>
-  <button id="ham" onclick="document.getElementById('mob').classList.toggle('open')"><i
-      class="fas fa-bars"></i></button>
 </nav>
 <div id="mob">
   <a href="#hero" onclick="this.closest('#mob').classList.remove('open')">HOME</a>

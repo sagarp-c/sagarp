@@ -252,18 +252,24 @@ body.light-mode #theme-toggle {
 }
 
 body.light-mode .t-circle {
-  transform: translateX(46px) !important;
+  transform: translateX(26px) !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
 }
 
-body.light-mode .t-text {
-  padding-left: 0 !important;
-  padding-right: 24px !important;
-  color: #a3a3a3 !important;
+body.light-mode .text-dark {
+  opacity: 0 !important;
 }
 
-body.light-mode .t-circle i {
-  color: #a3a3a3 !important;
+body.light-mode .text-light {
+  opacity: 1 !important;
+}
+
+body.light-mode .icon-dark {
+  opacity: 0 !important;
+}
+
+body.light-mode .icon-light {
+  opacity: 1 !important;
 }
 
 /* ═══════════════ FLASH SCREENS (LIGHT MODE) ═══════════════ */

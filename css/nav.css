@@ -76,11 +76,17 @@
   transform: scaleX(1)
 }
 
-.nav-soc {
+.nav-right {
   display: flex;
+  align-items: center;
   gap: 13px;
   flex-shrink: 0;
+}
+
+.nav-soc {
+  display: flex;
   align-items: center;
+  gap: 13px;
 }
 
 .nav-sep {
@@ -107,43 +113,60 @@
   border: 1px solid rgba(255,255,255,0.1) !important;
   color: var(--mut);
   cursor: pointer;
-  padding: 0 4px;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 76px !important;
-  height: 30px !important;
+  width: 48px !important;
+  height: 22px !important;
   border-radius: 999px !important;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   overflow: hidden;
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
   box-sizing: border-box !important;
   flex-shrink: 0 !important;
 }
 
+.t-texts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
 .t-text {
   font-family: 'Inter', sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.38rem;
   font-weight: 800;
-  color: #fff;
-  line-height: 1.1;
+  line-height: 1;
   text-align: center;
-  flex: 1;
-  padding-left: 24px;
-  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.text-dark {
+  right: 6px;
+  color: #fff;
+  opacity: 1;
+}
+
+.text-light {
+  left: 6px;
+  color: #a3a3a3;
+  opacity: 0;
 }
 
 .t-circle {
-  width: 22px !important;
-  height: 22px !important;
+  width: 16px !important;
+  height: 16px !important;
   border-radius: 50%;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 3px;
+  left: 2px;
   transform: translateX(0);
   transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -151,9 +174,19 @@
 }
 
 .t-circle i {
+  position: absolute;
+  font-size: 0.6rem;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.icon-dark {
   color: #1a1a24;
-  font-size: 0.8rem;
-  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.icon-light {
+  color: #a3a3a3;
+  opacity: 0;
 }
 
 #ham {

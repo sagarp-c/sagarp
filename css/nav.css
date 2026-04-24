@@ -110,19 +110,19 @@
 
 #theme-toggle {
   background: #1a1a24;
-  border: 1px solid rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: var(--mut);
   cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
-  width: 48px !important;
-  height: 22px !important;
+  width: 58px !important;
+  height: 26px !important;
   border-radius: 999px !important;
   position: relative;
   transition: background 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   overflow: hidden;
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
   box-sizing: border-box !important;
   flex-shrink: 0 !important;
 }
@@ -135,7 +135,7 @@
 
 .t-text {
   font-family: 'Inter', sans-serif;
-  font-size: 0.38rem;
+  font-size: 0.45rem;
   font-weight: 800;
   line-height: 1;
   text-align: center;
@@ -146,36 +146,36 @@
 }
 
 .text-dark {
-  right: 6px;
+  right: 7px;
   color: #fff;
   opacity: 1;
 }
 
 .text-light {
-  left: 6px;
+  left: 7px;
   color: #a3a3a3;
   opacity: 0;
 }
 
 .t-circle {
-  width: 16px !important;
-  height: 16px !important;
+  width: 20px !important;
+  height: 20px !important;
   border-radius: 50%;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 2px;
+  left: 3px;
   transform: translateX(0);
   transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   box-sizing: border-box !important;
 }
 
 .t-circle i {
   position: absolute;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 

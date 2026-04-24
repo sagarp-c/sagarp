@@ -132,15 +132,52 @@ function startHero() {
 }
 
 // ═══════════════ CONTACT FORM ═══════════════
-function sendMsg() {
+async function sendMsg() {
   const n = document.getElementById('cfn').value.trim();
   const e = document.getElementById('cfe').value.trim();
   const j = document.getElementById('cfj').value.trim();
   const m = document.getElementById('cfm').value.trim();
   const s = document.getElementById('cfs');
-  if (!n || !e || !m) { s.textContent = '// ERROR: Fill all fields'; s.className = 'cfe'; return; }
-  window.location.href = `mailto:sagarp.cvr@gmail.com?subject=${encodeURIComponent(j || 'Portfolio Contact: ' + n)}&body=${encodeURIComponent('From: ' + n + '\nEmail: ' + e + '\n\n' + m)}`;
-  s.textContent = '// ./transmit.sh executed — opening mail client'; s.className = 'cfo';
+  
+  if (!n || !e || !m) { 
+    s.textContent = '>> ERROR: Missing parameters. Please fill required fields.'; 
+    s.className = 'cfe'; 
+    return; 
+  }
+
+  s.textContent = '>> Initializing transmission to secure gateway...';
+  s.className = 'cfo';
+
+  const formData = new FormData();
+  formData.append("access_key", "c5b6701b-06c4-4e80-8355-ddd44e107fa5");
+  formData.append("name", n);
+  formData.append("email", e);
+  formData.append("subject", j || "Portfolio Message");
+  formData.append("message", m);
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      s.textContent = '>> [SUCCESS] Handshake complete. Message delivered.';
+      s.className = 'cfo';
+      // Clear form
+      document.getElementById('cfn').value = '';
+      document.getElementById('cfe').value = '';
+      document.getElementById('cfj').value = '';
+      document.getElementById('cfm').value = '';
+    } else {
+      s.textContent = '>> [ERROR] Gateway rejected request: ' + result.message;
+      s.className = 'cfe';
+    }
+  } catch (err) {
+    s.textContent = '>> [ERROR] Transmission failed. Check connection.';
+    s.className = 'cfe';
+  }
 }
 
 // ═══════════════ CHATBOT ═══════════════

@@ -68,10 +68,10 @@
         <div class="tbody">
           <div style="margin-bottom:11px;font-size:.73rem;color:var(--grn)"><span class="tp">→</span>Open for:
             internships, collabs, hackathons, AI/security consulting</div>
-          <input class="cfi" id="cfn" placeholder="your_name" type="text">
-          <input class="cfi" id="cfe" placeholder="your@email.com" type="email">
-          <input class="cfi" id="cfj" placeholder="subject_line" type="text">
-          <textarea class="cfi" id="cfm" placeholder="// write your message here..."></textarea>
+          <input class="cfi" id="cfn" name="name" placeholder="your_name" type="text" required>
+          <input class="cfi" id="cfe" name="email" placeholder="your@email.com" type="email" required>
+          <input class="cfi" id="cfj" name="subject" placeholder="subject_line" type="text">
+          <textarea class="cfi" id="cfm" name="message" placeholder="// write your message here..." required></textarea>
           <button class="btnp" style="width:100%;justify-content:center;clip-path:none" onclick="sendMsg()"><i
               class="fas fa-paper-plane"></i>./transmit.sh</button>
           <div id="cfs"></div>
